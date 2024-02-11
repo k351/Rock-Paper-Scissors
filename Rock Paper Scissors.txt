@@ -1,0 +1,16 @@
+Rock Paper Scissors
+
+
+Computer           Player
+
+WIN(_)             Lose(_)
+Rock               Scissors    
+Paper		   Rock
+Scissors	   Paper
+
+Lose(_)            WIN(_)
+Scissors	   Rock
+Rock		   Paper
+Paper  		   Scissors
+
+	   DRAW
