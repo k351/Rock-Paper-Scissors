@@ -1,3 +1,8 @@
+function toCapitalize(string) {
+  var newString = string[0].toUpperCase() + string.slice(1)
+  return newString
+}
+
 function getComputerChoice() {
   /*Return a choice for a computer*/
   var randomNumber = Math.floor(Math.random() * 3);
@@ -13,3 +18,37 @@ function getComputerChoice() {
   }
 
 }
+
+function singleRound(playerSelection, computerSelection) {
+  playerSelection = toCapitalize(playerSelection);
+  computerSelection = toCapitalize(computerSelection);
+  let message = ""
+
+  if (playerSelection === "Rock" && computerSelection === "Scissors") {
+    message = "You Win! " + playerSelection + " beats " + computerSelection
+  }
+  else if (playerSelection === "Paper" && computerSelection === "Rock") {
+    message = "You Win! " + playerSelection + " beats " + computerSelection
+  }
+  else if (playerSelection === "Scissors" && computerSelection === "Paper") {
+    message = "You Win! " + playerSelection + " beats " + computerSelection
+  }
+  else if (playerSelection === "Scissors" && computerSelection === "Rock") {
+    message = "You Lose! " + computerSelection + " beats " + playerSelection
+  }
+  else if (playerSelection === "Rock" && computerSelection === "Paper") {
+    message = "You Lose! " + computerSelection + " beats " + playerSelection
+  }
+  else if (playerSelection === "Paper" && computerSelection === "Scissors") {
+    message = "You Lose! " + computerSelection + " beats " + playerSelection
+  }
+  else if (playerSelection === computerSelection){
+    return "Draw!"
+  }
+
+  return message;
+}
+
+player = "Rock"
+computer = getComputerChoice()
+console.log(singleRound(player, computer))
