@@ -49,6 +49,38 @@ function singleRound(playerSelection, computerSelection) {
   return message;
 }
 
-player = "Rock"
-computer = getComputerChoice()
-console.log(singleRound(player, computer))
+function playGame() {
+  let playerWins = 0;
+  let computerWins = 0;
+  
+  for (let i = 1; i <= 5; i++) {
+    let player = prompt("Pick your choice: ")
+    let computer = getComputerChoice()
+    
+    let roundResult = singleRound(player, computer)
+
+    console.log("Round " + (i) + ": " + roundResult)
+    
+    if (roundResult.startsWith("You Win!")) {
+      playerWins++;
+    } else if (roundResult.startsWith("You Lose!")) {
+      computerWins++;
+    }
+    }
+
+  if (playerWins > computerWins) {
+    console.log("You win the game!");
+  } 
+  else if (playerWins < computerWins) {
+    console.log("You lose the game!");
+  } 
+  else {
+    console.log("The game ends in a draw!");
+  }
+
+}
+
+playGame()
+    
+  
+
