@@ -68,5 +68,17 @@ scissorsbtn.addEventListener('click', ()=> {
   div.textContent = result;
 })
 
+let playerScore = 0;
+let computerScore = 0;
 
+if (div.textContent.startsWith("You Win")) {
+  playerScore++;
+}
+else if (div.textContent.startsWith("You Lose")) {
+  computer++;
+}
 
+const score = document.querySelector(".score");
+score.textContent = 
+`Player   : ${playerScore} 
+ Computer : ${computerScore }`;
