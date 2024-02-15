@@ -18,7 +18,7 @@ function getComputerChoice() {
 
 }
 
-function singleRound(playerSelection, computerSelection) {
+function playRound(playerSelection, computerSelection) {
   playerSelection = toCapitalize(playerSelection);
   computerSelection = toCapitalize(computerSelection);
   let message = ""
