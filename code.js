@@ -52,39 +52,50 @@ let playerScore = 0;
 let computerScore = 0;
 
 const div = document.querySelector(".result");
-
 const main = document.querySelector("#main");
+
 main.addEventListener("click", (event) => {
   let target = event.target;
   let result;
   
-  switch (target.id) {
-    case "rock":
-      result = playRound("Rock", getComputerChoice());
-      div.textContent = result;
-      break;
-    case "paper":
-      result = playRound("Paper", getComputerChoice())
-      div.textContent = result;
-      break;
-    case "scissors":
-      result = playRound("Scissors", getComputerChoice())
-      div.textContent = result;
-      break;
-  }
+  if (playerScore !== 5 && computerScore !== 5)
+  {
+    switch (target.id) {
+      case "rock":
+        result = playRound("Rock", getComputerChoice());
+        div.textContent = result;
+        break;
+      case "paper":
+        result = playRound("Paper", getComputerChoice())
+        div.textContent = result;
+        break;
+      case "scissors":
+        result = playRound("Scissors", getComputerChoice())
+        div.textContent = result;
+        break;
+    }
 
-  
-  if (div.textContent.startsWith("You Win")) {
-    playerScore++;
-  }
-  else if (div.textContent.startsWith("You Lose")) {
-    computerScore++;
+    if (div.textContent.startsWith("You Win")) {
+      playerScore++;
+    }
+    else if (div.textContent.startsWith("You Lose")) {
+      computerScore++;
+    }
   }
 
   const score = document.querySelector(".score");
   score.textContent = 
   `Player   : ${playerScore} 
   Computer : ${computerScore }`;
+
 })
+
+if(playerScore === 5)  {
+  div.textContent = "Player win!";
+}
+else if (computerScore === 5) {
+  div.textContent = "Computer win!"
+}
+
 
 
