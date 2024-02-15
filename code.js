@@ -1,11 +1,10 @@
 function toCapitalize(string) {
-  var newString = string[0].toUpperCase() + string.slice(1)
-  return newString
+  return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
 function getComputerChoice() {
   /*Return a choice for a computer*/
-  var randomNumber = Math.floor(Math.random() * 3);
+  let randomNumber = Math.floor(Math.random() * 3);
   
   // Use the random number to determine the computer's choice
   switch (randomNumber) {
@@ -54,7 +53,7 @@ function playGame() {
   let computerWins = 0;
   
   for (let i = 1; i <= 5; i++) {
-    let player = prompt("Pick your choice: ")
+    let player = prompt("Pick your choice(Rock/Paper/Scissors): ")
     let computer = getComputerChoice()
     
     let roundResult = singleRound(player, computer)
