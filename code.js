@@ -50,35 +50,41 @@ function playRound(playerSelection, computerSelection) {
 
 const div = document.querySelector(".result");
 
-const rockbtn = document.querySelector(".rock");
-rockbtn.addEventListener('click', ()=> {
-  let result = playRound("Rock", getComputerChoice());
-  div.textContent = result;
+const main = document.querySelector("#main");
+main.addEventListener("click", (event) => {
+  let target = event.target;
+  let result;
+  
+  switch (target.id) {
+    case "rock":
+      result = playRound("Rock", getComputerChoice());
+      div.textContent = result;
+      break;
+    case "paper":
+      result = playRound("Paper", getComputerChoice())
+      div.textContent = result;
+      break;
+    case "scissors":
+      result = playRound("Scissors", getComputerChoice())
+      div.textContent = result;
+      break;
+  }
 })
 
-const paperbtn = document.querySelector(".paper");
-paperbtn.addEventListener('click', ()=> {
-  let result = playRound("Paper", getComputerChoice())
-  div.textContent = result;
-})
 
-const scissorsbtn = document.querySelector(".scissors");
-scissorsbtn.addEventListener('click', ()=> {
-  let result = playRound("Scissors", getComputerChoice())
-  div.textContent = result;
-})
 
-let playerScore = 0;
-let computerScore = 0;
 
-if (div.textContent.startsWith("You Win")) {
-  playerScore++;
-}
-else if (div.textContent.startsWith("You Lose")) {
-  computer++;
-}
+// let playerScore = 0;
+// let computerScore = 0;
 
-const score = document.querySelector(".score");
-score.textContent = 
-`Player   : ${playerScore} 
- Computer : ${computerScore }`;
+// if (div.textContent.startsWith("You Win")) {
+//   playerScore++;
+// }
+// else if (div.textContent.startsWith("You Lose")) {
+//   computer++;
+// }
+
+// const score = document.querySelector(".score");
+// score.textContent = 
+// `Player   : ${playerScore} 
+//  Computer : ${computerScore }`;
