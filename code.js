@@ -48,6 +48,9 @@ function playRound(playerSelection, computerSelection) {
   return message;
 }
 
+let playerScore = 0;
+let computerScore = 0;
+
 const div = document.querySelector(".result");
 
 const main = document.querySelector("#main");
@@ -69,22 +72,19 @@ main.addEventListener("click", (event) => {
       div.textContent = result;
       break;
   }
+
+  
+  if (div.textContent.startsWith("You Win")) {
+    playerScore++;
+  }
+  else if (div.textContent.startsWith("You Lose")) {
+    computerScore++;
+  }
+
+  const score = document.querySelector(".score");
+  score.textContent = 
+  `Player   : ${playerScore} 
+  Computer : ${computerScore }`;
 })
 
 
-
-
-// let playerScore = 0;
-// let computerScore = 0;
-
-// if (div.textContent.startsWith("You Win")) {
-//   playerScore++;
-// }
-// else if (div.textContent.startsWith("You Lose")) {
-//   computer++;
-// }
-
-// const score = document.querySelector(".score");
-// score.textContent = 
-// `Player   : ${playerScore} 
-//  Computer : ${computerScore }`;
